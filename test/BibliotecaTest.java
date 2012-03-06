@@ -8,7 +8,7 @@ public class BibliotecaTest {
 
     @Test
     public void test_should_show_welcome_message(){
-        String welcomeMessage = "Welcome to Biblioteca!\n";
+        String welcomeMessage = "Welcome to Biblioteca Library!\n";
         Assert.assertTrue(biblioteca.showMenuOptions().contains(welcomeMessage));
     }
 
@@ -48,7 +48,7 @@ public class BibliotecaTest {
 
     @Test
     public void test_user_can_reserve_book_when_available(){
-        String bookNumber = "1";
+        String bookNumber = "01";
         String notifiedMessage = "Thank You! Enjoy the book.";
 
         Assert.assertEquals(notifiedMessage, biblioteca.reserveBook(bookNumber));
@@ -56,11 +56,13 @@ public class BibliotecaTest {
 
     @Test
     public void test_user_can_not_reserve_book_when_it_has_been_reserved(){
-        String bookNumber = "01";
-        String notifiedMessage = "Sorry we don't have that book yet.";
-        
+        String bookNumber = "02";
+        String SuccessNotifiedMessage = "Thank You! Enjoy the book.";
+        String failNotifiedMessage = "Sorry we don't have that book yet.";
+
+        Assert.assertEquals(SuccessNotifiedMessage, biblioteca.reserveBook(bookNumber));
         biblioteca.reserveBook(bookNumber);
-        Assert.assertEquals(notifiedMessage, biblioteca.reserveBook(bookNumber));
+        Assert.assertEquals(failNotifiedMessage, biblioteca.reserveBook(bookNumber));
     }
 
     @Test

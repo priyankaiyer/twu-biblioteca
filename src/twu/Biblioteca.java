@@ -11,7 +11,7 @@ import java.util.TreeMap;
 public class Biblioteca {
 
     private Map<Integer, String> menu = new HashMap<Integer, String>();
-    private Map<String, Book> bookList = new TreeMap<String, Book>();
+    private Map<Integer, Book> bookList = new TreeMap<Integer, Book>();
 
     public Biblioteca(){
         menu.put(1, "View all books");
@@ -31,8 +31,8 @@ public class Biblioteca {
     }
 
     public String showMenuOptions() {
-        String welcomeMessage = "Welcome to Biblioteca!\n";
-        String menuOptions = welcomeMessage + "-------\n1. View all books." +
+        String welcomeMessage = "------------------------------\nWelcome to Biblioteca Library!\n";
+        String menuOptions = welcomeMessage + "------------------------------\n1. View all books." +
                 "\n2. Reservation." +
                 "\n3. Check library number." +
                 "\n\nPlease enter the option you want!\n";
@@ -75,11 +75,11 @@ public class Biblioteca {
     }
 
     public void loadBookCollection() {
-        bookList.put("1", new Book("01", "name1", "author1", false));
-        bookList.put("2", new Book("02", "name2", "author2", false));
-        bookList.put("3", new Book("03", "name3", "author3", true));
-        bookList.put("4", new Book("04", "name4", "author4", false));
-        bookList.put("5", new Book("05", "name5", "author5", true));
+        bookList.put(1, new Book("01", "name1", "author1", false));
+        bookList.put(2, new Book("02", "name2", "author2", false));
+        bookList.put(3, new Book("03", "name3", "author3", true));
+        bookList.put(4, new Book("04", "name4", "author4", false));
+        bookList.put(5, new Book("05", "name5", "author5", true));
     }
 
     private String reservation() {
@@ -90,12 +90,13 @@ public class Biblioteca {
     }
 
     public String reserveBook(String bookNumber) {
+        Integer bookNumberInteger = new Integer(bookNumber);
         boolean reserved = false;
-        if(bookList.containsKey(bookNumber)){
-            if( bookList.get(bookNumber).isReserved())
+        if(bookList.containsKey(bookNumberInteger)){
+            if( bookList.get(bookNumberInteger).isReserved())
                 reserved = true;
             else{
-                bookList.get(bookNumber).setReserved(true);
+                bookList.get(bookNumberInteger).setReserved(true);
                 reserved = false;
             }
         }else
