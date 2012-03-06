@@ -10,7 +10,6 @@ import java.util.TreeMap;
 
 public class Biblioteca {
 
-    private String welcomeMessage = "Welcome to Biblioteca!";
     private Map<Integer, String> menu = new HashMap<Integer, String>();
     private Map<String, Book> bookList = new TreeMap<String, Book>();
 
@@ -24,7 +23,6 @@ public class Biblioteca {
 
     public static void main(String[] args){
         Biblioteca biblioteca = new Biblioteca();
-        System.out.println(biblioteca.getWelcomeMessage());
 
         while(true){
             System.out.println(biblioteca.showMenuOptions());
@@ -32,12 +30,9 @@ public class Biblioteca {
         }
     }
 
-    public  String getWelcomeMessage() {
-        return welcomeMessage;
-    }
-
     public String showMenuOptions() {
-        String menuOptions = "-------\n1. View all books." +
+        String welcomeMessage = "Welcome to Biblioteca!\n";
+        String menuOptions = welcomeMessage + "-------\n1. View all books." +
                 "\n2. Reservation." +
                 "\n3. Check library number." +
                 "\n\nPlease enter the option you want!\n";

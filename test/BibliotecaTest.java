@@ -7,36 +7,36 @@ public class BibliotecaTest {
     private Biblioteca biblioteca = new Biblioteca();
 
     @Test
-    public void testShouldShowWelcomeMessage(){
-        String welcomeMessage = "Welcome to Biblioteca!";
-        Assert.assertEquals(welcomeMessage, biblioteca.getWelcomeMessage());
+    public void test_should_show_welcome_message(){
+        String welcomeMessage = "Welcome to Biblioteca!\n";
+        Assert.assertTrue(biblioteca.showMenuOptions().contains(welcomeMessage));
     }
 
     @Test
-    public void testShouldShowMenuOptions(){
+    public void test_should_show_menu_options(){
         String menuOptions = "-------\n1. View all books." +
                 "\n2. Reservation." +
                 "\n3. Check library number." +
                 "\n\nPlease enter the option you want!\n";
-        Assert.assertEquals(menuOptions, biblioteca.showMenuOptions());
+        Assert.assertTrue(biblioteca.showMenuOptions().contains(menuOptions));
     }
 
     @Test
-    public void testShouldNotifyWhenSelectedInvalidOption(){
+    public void test_should_notify_when_selected_invalid_option(){
         String notifiedMessage = "Select a valid option!!";
         int invalidNumber = 10;
         Assert.assertEquals(notifiedMessage, biblioteca.checkMenuSelection(invalidNumber));
     }
 
     @Test
-    public void testShouldShowProperMessageWhenSelectValidOption(){
+    public void test_should_show_proper_message_when_select_valid_option(){
         String notifiedMessage = "Selected 1: View all books\n";
         int validNumber = 1;
         Assert.assertEquals(notifiedMessage, biblioteca.checkMenuSelection(validNumber));
     }
 
     @Test
-    public void testShouldBeAbleViewAllBooksInLibrary(){
+    public void test_should_be_able_view_all_books_in_library(){
         String allBooks=
                 "01 name1 author1 available\n" +
                 "02 name2 author2 available\n" +
@@ -47,15 +47,15 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void testUserCanReserveBookWhenAvailable(){
-        String bookNumber = "01";
+    public void test_user_can_reserve_book_when_available(){
+        String bookNumber = "1";
         String notifiedMessage = "Thank You! Enjoy the book.";
 
         Assert.assertEquals(notifiedMessage, biblioteca.reserveBook(bookNumber));
     }
 
     @Test
-    public void testUserCannotReserveBookWhenItHasBeenReserved(){
+    public void test_user_can_not_reserve_book_when_it_has_been_reserved(){
         String bookNumber = "01";
         String notifiedMessage = "Sorry we don't have that book yet.";
         
@@ -64,7 +64,7 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void testUserCanCheckTheirLibraryNumber(){
+    public void test_user_can_check_their_library_number(){
         String notifiedMessage = "Please talk to Librarian. Thank you.";
 
         Assert.assertEquals(notifiedMessage, biblioteca.checkLibraryNumber());
