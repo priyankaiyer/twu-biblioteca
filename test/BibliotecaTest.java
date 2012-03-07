@@ -25,6 +25,7 @@ public class BibliotecaTest {
     public void test_should_notify_when_selected_invalid_option(){
         String notifiedMessage = "Select a valid option!!";
         int invalidNumber = 10;
+
         Assert.assertEquals(notifiedMessage, biblioteca.checkMenuSelection(invalidNumber));
     }
 

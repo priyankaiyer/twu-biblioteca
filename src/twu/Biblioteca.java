@@ -1,7 +1,6 @@
 package twu;
 
 import java.io.BufferedReader;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -49,17 +48,21 @@ public class Biblioteca {
 
     public void performSelection(){
         String selection = getSelectionFromScreen();
-        int optionNumber = Integer.parseInt(selection);
-        System.out.println(checkMenuSelection(optionNumber));
+        try{
+            int optionNumber = Integer.parseInt(selection);
+            System.out.println(checkMenuSelection(optionNumber));
 
-        if(optionNumber == 1){
-            System.out.println(viewAllBooks());
-        }
-        if(optionNumber == 2){
-            System.out.println(reservation());
-        }
-        if(optionNumber == 3){
-            System.out.println(checkLibraryNumber());
+            if(optionNumber == 1){
+                System.out.println(viewAllBooks());
+            }
+            if(optionNumber == 2){
+                System.out.println(reservation());
+            }
+            if(optionNumber == 3){
+                System.out.println(checkLibraryNumber());
+            }
+        }catch (Exception e){
+            System.out.println("Select a valid option!!");
         }
     }
 
