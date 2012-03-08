@@ -11,9 +11,6 @@ public class Biblioteca {
     private ArrayList<String> menu = new ArrayList<String> ();
     private Map<Integer, Book> bookList = new TreeMap<Integer, Book>();
 
-    private static String welcome_message =
-            "------------------------------\nWelcome to Biblioteca Library!\n------------------------------\n";
-
     public Biblioteca(){
         loadMenu();
         loadBookCollection();
@@ -35,7 +32,9 @@ public class Biblioteca {
     }
 
     public String showMenuOptions() {
-        String menu_options = welcome_message;
+        String welcomeMessage =
+                "------------------------------\nWelcome to Biblioteca Library!\n------------------------------\n";
+        String menu_options = welcomeMessage;
         for(String entry : menu){
             menu_options += "\n"+ (menu.indexOf(entry)+1) +". "+ entry;
         }
