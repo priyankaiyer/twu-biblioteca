@@ -14,7 +14,7 @@ public class BibliotecaTest {
 
     @Test
     public void test_should_show_menu_options(){
-        String menuOptions = "-------\n1. View all books." +
+        String menuOptions = "\n1. View all books." +
                 "\n2. Reservation." +
                 "\n3. Check library number." +
                 "\n\nPlease enter the option you want!\n";
@@ -31,7 +31,7 @@ public class BibliotecaTest {
 
     @Test
     public void test_should_show_proper_message_when_select_valid_option(){
-        String notifiedMessage = "Selected 1: View all books\n";
+        String notifiedMessage = "Selected 1: View all books.\n";
         int validNumber = 1;
         Assert.assertEquals(notifiedMessage, biblioteca.checkMenuSelection(validNumber));
     }

@@ -2,21 +2,20 @@ package twu;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Iterator;
+import java.util.ArrayList;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class Biblioteca {
 
-    private Map<Integer, String> menu = new HashMap<Integer, String>();
+    private ArrayList<String> menu = new ArrayList<String> ();
     private Map<Integer, Book> bookList = new TreeMap<Integer, Book>();
 
-    public Biblioteca(){
-        menu.put(1, "View all books");
-        menu.put(2, "Reservation");
-        menu.put(3, "Check library number");
+    private static String welcome_message =
+            "------------------------------\nWelcome to Biblioteca Library!\n------------------------------\n";
 
+    public Biblioteca(){
+        loadMenu();
         loadBookCollection();
     }
 
@@ -29,27 +28,37 @@ public class Biblioteca {
         }
     }
 
+    private void loadMenu() {
+        menu.add("View all books.");
+        menu.add("Reservation.");
+        menu.add("Check library number.");
+    }
+
     public String showMenuOptions() {
-        String welcomeMessage = "------------------------------\nWelcome to Biblioteca Library!\n";
-        String menuOptions = welcomeMessage + "------------------------------\n1. View all books." +
-                "\n2. Reservation." +
-                "\n3. Check library number." +
-                "\n\nPlease enter the option you want!\n";
-        return menuOptions;
+        String menu_options = welcome_message;
+        for(String entry : menu){
+            menu_options += "\n"+ (menu.indexOf(entry)+1) +". "+ entry;
+        }
+        menu_options += "\n\nPlease enter the option you want!\n";
+        return menu_options;
     }
 
     public String checkMenuSelection(int number) {
-        String notifiedMessage = "Select a valid option!!";
-        if(menu.containsKey(number)){
-            return notifiedMessage = "Selected " + number + ": " + menu.get(number) + "\n";
-        }else
-            return notifiedMessage;
+        String choice = "";
+        try{
+            if(menu.get(number-1)!=null)
+              choice = "Selected " + (number) + ": " + menu.get(number-1) + "\n";
+        }catch(Exception e ){
+            choice = "Select a valid option!!";
+        }
+        return choice;
     }
 
     public void performSelection(){
         String selection = getSelectionFromScreen();
         try{
             int optionNumber = Integer.parseInt(selection);
+
             System.out.println(checkMenuSelection(optionNumber));
 
             if(optionNumber == 1){
@@ -68,10 +77,7 @@ public class Biblioteca {
 
     public String viewAllBooks() {
         String booksDisplay = "";
-        Iterator iterator = bookList.entrySet().iterator();
-
-        while (iterator.hasNext()){
-            Map.Entry entry = (Map.Entry) iterator.next();
+        for (Map.Entry<Integer,Book> entry : bookList.entrySet()) {
             booksDisplay += entry.getValue().toString()+ "\n";
         }
         return booksDisplay;
@@ -94,7 +100,7 @@ public class Biblioteca {
 
     public String reserveBook(String bookNumber) {
         Integer bookNumberInteger = new Integer(bookNumber);
-        boolean reserved = false;
+        boolean reserved;
         if(bookList.containsKey(bookNumberInteger)){
             if( bookList.get(bookNumberInteger).isReserved())
                 reserved = true;
@@ -115,9 +121,7 @@ public class Biblioteca {
     }
 
     public String checkLibraryNumber() {
-        String notifiedMessage = "Please talk to Librarian. Thank you.";
-
-        return notifiedMessage;
+        return "Please talk to Librarian. Thank you.";
     }
 
     private String getSelectionFromScreen(){
@@ -129,7 +133,7 @@ public class Biblioteca {
         }
     }
     
-    private static BufferedReader newReaderFromScreen() {
+    private BufferedReader newReaderFromScreen() {
         return new BufferedReader(new InputStreamReader(System.in));
     }
 }
