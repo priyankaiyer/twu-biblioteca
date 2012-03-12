@@ -17,7 +17,7 @@ public class BibliotecaTest {
         String menuOptions = "\n1. View all books." +
                 "\n2. Reservation." +
                 "\n3. Check library number." +
-                "\n4. View all movies."+
+                "\n4. View all movies." +
                 "\n\nPlease enter the option you want!\n";
         Assert.assertTrue(biblioteca.showMenuOptions().contains(menuOptions));
     }

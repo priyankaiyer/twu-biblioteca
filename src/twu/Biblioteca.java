@@ -10,6 +10,8 @@ public class Biblioteca {
 
     private ArrayList<String> menu = new ArrayList<String> ();
     private Map<Integer, Book> bookList = new TreeMap<Integer, Book>();
+    
+    private BibliotecaMovie bibliotecaMovie = new BibliotecaMovie();
 
     public Biblioteca(){
         loadBookCollection();
@@ -69,6 +71,9 @@ public class Biblioteca {
             }
             if(optionNumber == 3){
                 System.out.println(checkLibraryNumber());
+            }
+            if(optionNumber == 4){
+                System.out.println(bibliotecaMovie.viewAllMovies());
             }
         }catch (Exception e){
             System.out.println("Select a valid option!!");

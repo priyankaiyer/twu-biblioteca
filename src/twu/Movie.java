@@ -2,12 +2,12 @@ package twu;
 
 public class Movie {
     private String name;
-    private String author;
+    private String director;
     private String ratings;
 
-    public Movie(String name, String author, String ratings) {
+    public Movie(String name, String director, String ratings) {
         this.name = name;
-        this.author = author;
+        this.director = director;
         this.ratings = ratings;
     }
 
@@ -19,12 +19,12 @@ public class Movie {
         this.name = name;
     }
 
-    public String getAuthor() {
-        return author;
+    public String getDirector() {
+        return director;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setDirector(String director) {
+        this.director = director;
     }
 
     public String getRatings() {
@@ -34,8 +34,9 @@ public class Movie {
     public void setRatings(String ratings) {
         this.ratings = ratings;
     }
+
     @Override
     public String toString() {
-        return getName() + " " + getAuthor() + " " + getRatings();
+        return getName() + " " + getDirector() + " " + getRatings();
     }
 }
