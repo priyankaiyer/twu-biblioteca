@@ -12,8 +12,8 @@ public class Biblioteca {
     private Map<Integer, Book> bookList = new TreeMap<Integer, Book>();
 
     public Biblioteca(){
-        loadMenu();
         loadBookCollection();
+        loadMenu();
     }
 
     public static void main(String[] args){
@@ -29,6 +29,7 @@ public class Biblioteca {
         menu.add("View all books.");
         menu.add("Reservation.");
         menu.add("Check library number.");
+        menu.add("View all movies.");
     }
 
     public String showMenuOptions() {

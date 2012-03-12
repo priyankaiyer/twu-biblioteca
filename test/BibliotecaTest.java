@@ -4,7 +4,7 @@ import twu.Biblioteca;
 
 public class BibliotecaTest {
 
-    private Biblioteca biblioteca = new Biblioteca();
+    protected Biblioteca biblioteca = new Biblioteca();
 
     @Test
     public void test_should_show_welcome_message(){
@@ -17,6 +17,7 @@ public class BibliotecaTest {
         String menuOptions = "\n1. View all books." +
                 "\n2. Reservation." +
                 "\n3. Check library number." +
+                "\n4. View all movies."+
                 "\n\nPlease enter the option you want!\n";
         Assert.assertTrue(biblioteca.showMenuOptions().contains(menuOptions));
     }
