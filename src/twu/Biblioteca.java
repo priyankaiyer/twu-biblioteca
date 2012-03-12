@@ -77,8 +77,6 @@ public class Biblioteca {
         }
     }
 
-
-
     private String reservation() {
         System.out.println("Please input the number of the book to reserve!");
 
