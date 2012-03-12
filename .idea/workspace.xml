@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="16194323-de8f-409b-bfc6-c5d5071eace8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/twu/BibliotecaMovie.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/twu/BibliotecaBook.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/BibliotecaBookTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/twu/Biblioteca.java" afterPath="$PROJECT_DIR$/src/twu/Biblioteca.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/twu/Movie.java" afterPath="$PROJECT_DIR$/src/twu/Movie.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/BibliotecaMovieTest.java" afterPath="$PROJECT_DIR$/test/BibliotecaMovieTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/BibliotecaTest.java" afterPath="$PROJECT_DIR$/test/BibliotecaTest.java" />
     </list>
     <ignored path="Biblioteca.iws" />
@@ -68,11 +67,10 @@
       <file leaf-file-name="Biblioteca.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/twu/Biblioteca.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="36" selection-start="590" selection-end="590" vertical-scroll-proportion="0.80985916">
+            <state line="102" column="125" selection-start="3054" selection-end="3054" vertical-scroll-proportion="0.7183099">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#233#241#0" expanded="true" />
-                <element signature="e#299#314#0" expanded="true" />
+                <element signature="e#185#193#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -109,10 +107,12 @@
         <option value="$PROJECT_DIR$/test/MovieTest.java" />
         <option value="$PROJECT_DIR$/test/UserTest.java" />
         <option value="$PROJECT_DIR$/src/twu/Movie.java" />
-        <option value="$PROJECT_DIR$/src/twu/Biblioteca.java" />
         <option value="$PROJECT_DIR$/src/twu/BibliotecaMovie.java" />
-        <option value="$PROJECT_DIR$/test/BibliotecaTest.java" />
+        <option value="$PROJECT_DIR$/src/twu/BibliotecaBook.java" />
+        <option value="$PROJECT_DIR$/src/twu/Biblioteca.java" />
         <option value="$PROJECT_DIR$/test/BibliotecaMovieTest.java" />
+        <option value="$PROJECT_DIR$/test/BibliotecaTest.java" />
+        <option value="$PROJECT_DIR$/test/BibliotecaBookTest.java" />
       </list>
     </option>
   </component>
@@ -272,50 +272,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.All in Biblioteca">
-    <configuration default="false" name="BibliotecaMovieTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="Biblioteca" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BibliotecaMovieTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
-    <configuration default="false" name="BibliotecaTest" type="JUnit" factoryName="JUnit" temporary="true">
-      <module name="Biblioteca" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BibliotecaTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="moduleWithDependencies" />
-      </option>
-      <envs />
-      <patterns />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
     <configuration default="false" name="BibliotecaMovieTest.test_should_list_all_movies_with_name_director_ratings" type="JUnit" factoryName="JUnit" temporary="true">
       <module name="Biblioteca" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -362,6 +318,50 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="package" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="BibliotecaBookTest" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="Biblioteca" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BibliotecaBookTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="BibliotecaBookTest.test_should_be_able_view_all_books_in_library" type="JUnit" factoryName="JUnit" temporary="true">
+      <module name="Biblioteca" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="BibliotecaBookTest" />
+      <option name="METHOD_NAME" value="test_should_be_able_view_all_books_in_library" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -494,11 +494,11 @@
       </method>
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.BibliotecaMovieTest" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BibliotecaTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.BibliotecaMovieTest.test_should_list_all_movies_with_name_director_ratings" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Biblioteca" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.All in Biblioteca" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.BibliotecaMovieTest.test_should_list_all_movies_with_name_director_ratings" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Biblioteca" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.All in Biblioteca" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.BibliotecaBookTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.BibliotecaBookTest.test_should_be_able_view_all_books_in_library" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -647,24 +647,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/BibliotecaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="88" selection-start="618" selection-end="618" vertical-scroll-proportion="0.33333334">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/BibliotecaMovieTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="8" selection-start="1720" selection-end="1720" vertical-scroll-proportion="1.35">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/twu/Movie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4" column="56" selection-start="88" selection-end="88" vertical-scroll-proportion="0.14084508">
@@ -674,7 +656,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/twu/BibliotecaMovie.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="40" selection-start="481" selection-end="481" vertical-scroll-proportion="0.59859157">
+        <state line="17" column="40" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#149#165#0" expanded="true" />
@@ -682,13 +664,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/twu/Biblioteca.java">
+    <entry file="file://$PROJECT_DIR$/test/BibliotecaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="36" selection-start="590" selection-end="590" vertical-scroll-proportion="0.80985916">
+        <state line="13" column="41" selection-start="378" selection-end="378" vertical-scroll-proportion="0.48267326">
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#233#241#0" expanded="true" />
-            <element signature="e#299#314#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/twu/BibliotecaBook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="0" selection-start="1588" selection-end="1588" vertical-scroll-proportion="0.85915494">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#146#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/BibliotecaBookTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="66" selection-start="1249" selection-end="1249" vertical-scroll-proportion="1.1619718">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/BibliotecaMovieTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="26" selection-start="135" selection-end="206" vertical-scroll-proportion="0.2112676">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/twu/Biblioteca.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="102" column="125" selection-start="3054" selection-end="3054" vertical-scroll-proportion="0.7183099">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#185#193#0" expanded="true" />
           </folding>
         </state>
       </provider>
