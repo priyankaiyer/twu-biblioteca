@@ -18,6 +18,7 @@ public class BibliotecaTest {
                 "\n2. Reservation." +
                 "\n3. Check library number." +
                 "\n4. View all movies." +
+                "\n5. Login." +
                 "\n\nPlease enter the option you want!\n";
         Assert.assertTrue(biblioteca.showMenuOptions().contains(menuOptions));
     }
@@ -38,7 +39,7 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void test_user_can_check_their_library_number(){
+    public void test_should_show_message_for_check_library_number_when_user_has_not_logged_in(){
         String notifiedMessage = "Please talk to Librarian. Thank you.";
 
         Assert.assertEquals(notifiedMessage, biblioteca.checkLibraryNumber());

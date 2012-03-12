@@ -11,23 +11,21 @@ public class BibliotecaUser {
         loadUser();
     }
     
-    public Boolean verifyUser(User user){
+    public String verifyUser(User user){
         String currentUsername = user.getUsername();
         String currentPassword = user.getPassword();
 
         if(usersList.containsKey(currentUsername)){
             if(currentPassword.equals(usersList.get(currentUsername))) {
                 user.setLoggedIn(true);
-                System.out.println("User successfully login!");
-                return true;
+                return "User successfully login!";
             }
             else{
-                System.out.println("Wrong password!");
-                return false;
+                user.setLoggedIn(false);
+                return "Wrong password!";
             }
         }else{
-            System.out.println("Username doesn't exist!");
-            return false;
+            return "Username doesn't exist!";
         }
     }
 

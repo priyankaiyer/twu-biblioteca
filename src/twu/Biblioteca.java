@@ -10,6 +10,9 @@ public class Biblioteca {
 
     private BibliotecaMovie bibliotecaMovie = new BibliotecaMovie();
     private BibliotecaBook bibliotecaBook = new BibliotecaBook();
+    private BibliotecaUser bibliotecaUser = new BibliotecaUser();
+
+    private User currentUser = new User("000", "000");
 
     public Biblioteca(){
         loadMenu();
@@ -29,6 +32,7 @@ public class Biblioteca {
         menu.add("Reservation.");
         menu.add("Check library number.");
         menu.add("View all movies.");
+        menu.add("Login.");
     }
 
     public String showMenuOptions() {
@@ -64,7 +68,7 @@ public class Biblioteca {
                 System.out.println(bibliotecaBook.viewAllBooks());
             }
             if(optionNumber == 2){
-                System.out.println(reservation());
+                System.out.println(bookReservation());
             }
             if(optionNumber == 3){
                 System.out.println(checkLibraryNumber());
@@ -72,20 +76,42 @@ public class Biblioteca {
             if(optionNumber == 4){
                 System.out.println(bibliotecaMovie.viewAllMovies());
             }
+            if(optionNumber == 5){
+                System.out.println(userLogin());
+            }
         }catch (Exception e){
             System.out.println("Select a valid option!!");
         }
     }
 
-    private String reservation() {
-        System.out.println("Please input the number of the book to reserve!");
+    private String userLogin() {
+        if(currentUser.isLoggedIn())
+            return "You've logged in.";
+        System.out.println("Please enter your username/library number.");
+        String currentUsername = getSelectionFromScreen();
+        System.out.println("Please enter your password.");
+        String currentPassword = getSelectionFromScreen();
 
-        String selection = getSelectionFromScreen();
-        return bibliotecaBook.reserveBook(selection);
+        currentUser = new User(currentUsername, currentPassword);
+        return bibliotecaUser.verifyUser(currentUser);
+    }
+
+    private String bookReservation() {
+        if(currentUser.isLoggedIn()){
+            System.out.println("Please input the number of the book to reserve!");
+
+            String selection = getSelectionFromScreen();
+            return bibliotecaBook.reserveBook(selection);
+        }
+        else
+            return "Please Login first.";
     }
 
     public String checkLibraryNumber() {
-        return "Please talk to Librarian. Thank you.";
+        if(currentUser.isLoggedIn())
+            return currentUser.getUsername();
+        else
+            return "Please talk to Librarian. Thank you.";
     }
 
     private String getSelectionFromScreen(){
