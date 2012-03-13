@@ -87,8 +87,10 @@ public class Biblioteca {
     private String userLogin() {
         if(currentUser.isLoggedIn())
             return "You've logged in.";
+
         System.out.println("Please enter your username/library number.");
         String currentUsername = getSelectionFromScreen();
+
         System.out.println("Please enter your password.");
         String currentPassword = getSelectionFromScreen();
 
@@ -114,16 +116,21 @@ public class Biblioteca {
             return "Please talk to Librarian. Thank you.";
     }
 
-    private String getSelectionFromScreen(){
+    protected String getSelectionFromScreen(){
         BufferedReader reader = newReaderFromScreen();
         try{
-            return reader.readLine();
+            String inputLine = reader.readLine();
+            while(inputLine.trim().equals("")){
+                System.out.println("Input cannot be blank. Please re-enter.");
+                inputLine = reader.readLine();
+            }
+            return inputLine;
         }catch (Exception e){
             return "0";
         }
     }
     
-    private BufferedReader newReaderFromScreen() {
+    protected BufferedReader newReaderFromScreen() {
         return new BufferedReader(new InputStreamReader(System.in));
     }
 }

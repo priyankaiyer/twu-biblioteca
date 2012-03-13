@@ -3,14 +3,14 @@ package twu;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BibliotecaUser {
+public class BibliotecaUser{
 
     private static Map<String, String> usersList = new HashMap<String, String>();
 
     public BibliotecaUser(){
         loadUser();
     }
-    
+
     public String verifyUser(User user){
         String currentUsername = user.getUsername();
         String currentPassword = user.getPassword();
