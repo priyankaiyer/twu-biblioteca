@@ -29,15 +29,14 @@ public class BibliotecaBook {
     public String reserveBook(String bookNumber) {
         Integer bookNumberInteger = new Integer(bookNumber);
         boolean reserved;
-        if(bookList.containsKey(bookNumberInteger)){
-            if( bookList.get(bookNumberInteger).isReserved())
-                reserved = true;
-            else{
-                bookList.get(bookNumberInteger).setReserved(true);
-                reserved = false;
-            }
-        }else
+        if(!bookList.containsKey(bookNumberInteger))
             reserved = true;
+        if( bookList.get(bookNumberInteger).isReserved()){
+            reserved = true;
+        }else{
+            bookList.get(bookNumberInteger).setReserved(true);
+            reserved = false;
+        }
         return getBookReservationStatus(reserved);
     }
 
