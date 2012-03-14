@@ -46,23 +46,13 @@ public class Biblioteca {
         return menu_options;
     }
 
-    public String checkMenuSelection(int number) {
-        String choice = "";
-        try{
-            if(menu.get(number-1)!=null)
-              choice = "Selected " + (number) + ": " + menu.get(number-1) + "\n";
-        }catch(Exception e ){
-            choice = "Select a valid option!!";
-        }
-        return choice;
-    }
-
     public void performSelection(){
         String selection = getSelectionFromScreen();
         try{
             int optionNumber = Integer.parseInt(selection);
 
-            System.out.println(checkMenuSelection(optionNumber));
+            if(optionNumber == 0 || optionNumber > menu.size())
+                System.out.println("Select a valid option!!");
 
             if(optionNumber == 1){
                 System.out.println(bibliotecaBook.viewAllBooks());
@@ -118,6 +108,7 @@ public class Biblioteca {
 
     protected String getSelectionFromScreen(){
         BufferedReader reader = newReaderFromScreen();
+        String rescuedNumber = "0";
         try{
             String inputLine = reader.readLine();
             while(inputLine.trim().equals("")){
@@ -126,7 +117,7 @@ public class Biblioteca {
             }
             return inputLine;
         }catch (Exception e){
-            return "0";
+            return rescuedNumber;
         }
     }
     

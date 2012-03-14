@@ -24,21 +24,6 @@ public class BibliotecaTest {
     }
 
     @Test
-    public void test_should_notify_when_selected_invalid_option(){
-        String notifiedMessage = "Select a valid option!!";
-        int invalidNumber = 10;
-
-        Assert.assertEquals(notifiedMessage, biblioteca.checkMenuSelection(invalidNumber));
-    }
-
-    @Test
-    public void test_should_show_proper_message_when_select_valid_option(){
-        String notifiedMessage = "Selected 1: View all books.\n";
-        int validNumber = 1;
-        Assert.assertEquals(notifiedMessage, biblioteca.checkMenuSelection(validNumber));
-    }
-
-    @Test
     public void test_should_show_message_for_check_library_number_when_user_has_not_logged_in(){
         String notifiedMessage = "Please talk to Librarian. Thank you.";
 
