@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 public class Biblioteca {
 
+    ScreenReader screenReader = new ScreenReader();
+
     private ArrayList<String> menu = new ArrayList<String> ();
 
     private BibliotecaMovie bibliotecaMovie = new BibliotecaMovie();
@@ -47,7 +49,7 @@ public class Biblioteca {
     }
 
     public void performSelection(){
-        String selection = getSelectionFromScreen();
+        String selection = screenReader.getSelectionFromScreen();
         try{
             int optionNumber = Integer.parseInt(selection);
 
@@ -79,10 +81,10 @@ public class Biblioteca {
             return "You've logged in.";
 
         System.out.println("Please enter your username/library number.");
-        String currentUsername = getSelectionFromScreen();
+        String currentUsername = screenReader.getSelectionFromScreen();
 
         System.out.println("Please enter your password.");
-        String currentPassword = getSelectionFromScreen();
+        String currentPassword = screenReader.getSelectionFromScreen();
 
         currentUser = new User(currentUsername, currentPassword);
         return bibliotecaUser.verifyUser(currentUser);
@@ -92,7 +94,7 @@ public class Biblioteca {
         if(currentUser.isLoggedIn()){
             System.out.println("Please input the number of the book to reserve!");
 
-            String selection = getSelectionFromScreen();
+            String selection = screenReader.getSelectionFromScreen();
             return bibliotecaBook.reserveBook(selection);
         }
         else
@@ -104,24 +106,5 @@ public class Biblioteca {
             return currentUser.getUsername();
         else
             return "Please talk to Librarian. Thank you.";
-    }
-
-    protected String getSelectionFromScreen(){
-        BufferedReader reader = newReaderFromScreen();
-        String rescuedNumber = "0";
-        try{
-            String inputLine = reader.readLine();
-            while(inputLine.trim().equals("")){
-                System.out.println("Input cannot be blank. Please re-enter.");
-                inputLine = reader.readLine();
-            }
-            return inputLine;
-        }catch (Exception e){
-            return rescuedNumber;
-        }
-    }
-    
-    protected BufferedReader newReaderFromScreen() {
-        return new BufferedReader(new InputStreamReader(System.in));
     }
 }
