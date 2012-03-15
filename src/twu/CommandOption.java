@@ -28,3 +28,40 @@ public enum CommandOption {
         return command;
     }
 }
+
+class ViewAllBooksCommand implements Command{
+
+    @Override
+    public String execute(Biblioteca biblioteca){
+        return biblioteca.getBibliotecaBook().viewAllBooks();
+    }
+}
+
+class ReserveBooksCommand implements Command{
+    @Override
+    public String execute(Biblioteca biblioteca){
+        return biblioteca.bookReservation();
+    }
+}
+
+class CheckLibraryNumberCommand implements Command{
+    @Override
+    public String execute(Biblioteca biblioteca){
+        return biblioteca.checkLibraryNumber();
+    }
+}
+
+class ViewAllMoviesCommand implements Command{
+
+    @Override
+    public String execute(Biblioteca biblioteca){
+        return biblioteca.getBibliotecaMovie().viewAllMovies();
+    }
+}
+
+class UserLoginCommand implements Command {
+    @Override
+    public String execute(Biblioteca biblioteca){
+        return biblioteca.userLogin();
+    }
+}
