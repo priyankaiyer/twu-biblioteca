@@ -56,27 +56,15 @@ public class Biblioteca {
             if(optionNumber == 0 || optionNumber > menu.size())
                 System.out.println("Select a valid option!!");
 
-            if(optionNumber == 1){
-                System.out.println(bibliotecaBook.viewAllBooks());
-            }
-            if(optionNumber == 2){
-                System.out.println(bookReservation());
-            }
-            if(optionNumber == 3){
-                System.out.println(checkLibraryNumber());
-            }
-            if(optionNumber == 4){
-                System.out.println(bibliotecaMovie.viewAllMovies());
-            }
-            if(optionNumber == 5){
-                System.out.println(userLogin());
-            }
+            CommandOption commandOption = CommandOption.getFromKey(optionNumber);
+            System.out.println(commandOption.getCommand().execute(this));
+
         }catch (Exception e){
             System.out.println("Select a valid option!!");
         }
     }
 
-    private String userLogin() {
+    protected String userLogin() {
         if(currentUser.isLoggedIn())
             return "You've logged in.";
 

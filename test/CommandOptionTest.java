@@ -22,7 +22,7 @@ public class CommandOptionTest {
     }
 
     @Test
-    public void test_should_able_to_check_library_number(){
+    public void test_should_execute_check_library_number(){
         int optionNumber = 3;
         CommandOption commandOption = CommandOption.getFromKey(optionNumber);
         String notifiedMessage = "Please talk to Librarian. Thank you.";

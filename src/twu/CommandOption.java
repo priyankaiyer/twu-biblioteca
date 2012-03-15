@@ -4,7 +4,8 @@ public enum CommandOption {
     ViewAllBooks(1, new ViewAllBooksCommand()),
     ReserveBooks(2, new ReserveBooksCommand()),
     CheckLibraryNumber(3, new CheckLibraryNumberCommand()),
-    ViewAllMovies(4, new ViewAllMoviesCommand());
+    ViewAllMovies(4, new ViewAllMoviesCommand()),
+    UserLogin(5, new UserLoginCommand());
     
     private  int selectionKey;
     private Command command;
@@ -26,5 +27,4 @@ public enum CommandOption {
     public Command getCommand() {
         return command;
     }
-
 }
