@@ -90,7 +90,7 @@ public class Biblioteca {
         return bibliotecaUser.verifyUser(currentUser);
     }
 
-    private String bookReservation() {
+    protected String bookReservation() {
         if(currentUser.isLoggedIn()){
             System.out.println("Please input the number of the book to reserve!");
 
@@ -106,5 +106,13 @@ public class Biblioteca {
             return currentUser.getUsername();
         else
             return "Please talk to Librarian. Thank you.";
+    }
+
+    public BibliotecaBook getBibliotecaBook() {
+        return bibliotecaBook;
+    }
+
+    public BibliotecaMovie getBibliotecaMovie() {
+        return bibliotecaMovie;
     }
 }
