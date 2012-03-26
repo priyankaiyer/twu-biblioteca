@@ -30,10 +30,9 @@ public enum CommandOption {
 }
 
 class ViewAllBooksCommand implements Command{
-
     @Override
     public String execute(Biblioteca biblioteca){
-        return biblioteca.getBibliotecaBook().viewAllBooks();
+        return biblioteca.getBookManager().viewAllBooks();
     }
 }
 
@@ -52,10 +51,9 @@ class CheckLibraryNumberCommand implements Command{
 }
 
 class ViewAllMoviesCommand implements Command{
-
     @Override
     public String execute(Biblioteca biblioteca){
-        return biblioteca.getBibliotecaMovie().viewAllMovies();
+        return biblioteca.getMovieManager().viewAllMovies();
     }
 }
 

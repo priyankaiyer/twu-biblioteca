@@ -8,9 +8,9 @@ public class Biblioteca {
 
     private ArrayList<String> menu = new ArrayList<String> ();
 
-    private BibliotecaMovie bibliotecaMovie = new BibliotecaMovie();
-    private BibliotecaBook bibliotecaBook = new BibliotecaBook();
-    private BibliotecaUser bibliotecaUser = new BibliotecaUser();
+    private MovieManager movieManager = new MovieManager();
+    private BookManager bookManager = new BookManager();
+    private UserManager userManager = new UserManager();
 
     private User currentUser = new User("000", "000");
 
@@ -73,7 +73,7 @@ public class Biblioteca {
         String currentPassword = screenReader.getSelectionFromScreen();
 
         currentUser = new User(currentUsername, currentPassword);
-        return bibliotecaUser.verifyUser(currentUser);
+        return userManager.verifyUser(currentUser);
     }
 
     protected String bookReservation() {
@@ -81,7 +81,7 @@ public class Biblioteca {
             System.out.println("Please input the number of the book to reserve!");
 
             String selection = screenReader.getSelectionFromScreen();
-            return bibliotecaBook.reserveBook(selection);
+            return bookManager.reserveBook(selection);
         }
         else
             return "Please Login first.";
@@ -94,11 +94,11 @@ public class Biblioteca {
             return "Please talk to Librarian. Thank you.";
     }
 
-    public BibliotecaBook getBibliotecaBook() {
-        return bibliotecaBook;
+    public BookManager getBookManager() {
+        return bookManager;
     }
 
-    public BibliotecaMovie getBibliotecaMovie() {
-        return bibliotecaMovie;
+    public MovieManager getMovieManager() {
+        return movieManager;
     }
 }

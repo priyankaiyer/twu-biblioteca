@@ -3,11 +3,11 @@ package twu;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class BibliotecaMovie{
+public class MovieManager {
 
     private Map<Integer, Movie> movieList = new TreeMap<Integer, Movie>();
 
-    public BibliotecaMovie(){
+    public MovieManager(){
         loadMovieCollection();
     }
 

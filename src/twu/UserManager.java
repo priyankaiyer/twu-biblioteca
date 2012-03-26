@@ -3,11 +3,11 @@ package twu;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BibliotecaUser{
+public class UserManager {
 
     private static Map<String, String> usersList = new HashMap<String, String>();
 
-    public BibliotecaUser(){
+    public UserManager(){
         loadUser();
     }
 

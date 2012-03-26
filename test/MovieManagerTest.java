@@ -1,10 +1,10 @@
 import org.junit.Assert;
 import org.junit.Test;
-import twu.BibliotecaMovie;
+import twu.MovieManager;
 
-public class BibliotecaMovieTest extends BibliotecaTest{
+public class MovieManagerTest extends BibliotecaTest{
 
-    protected BibliotecaMovie bibliotecaMovie = new BibliotecaMovie();
+    protected MovieManager movieManager = new MovieManager();
 
     @Test
     public void test_should_show_view_movie_menu_item(){
@@ -32,6 +32,6 @@ public class BibliotecaMovieTest extends BibliotecaTest{
             "The Iron Lady Phyllida Lloyd 6\n"                      +
             "Pretty Woman Garry Marshall 7\n" ;
 
-        Assert.assertTrue(bibliotecaMovie.viewAllMovies().contains(allMovies));
+        Assert.assertTrue(movieManager.viewAllMovies().contains(allMovies));
     }
 }

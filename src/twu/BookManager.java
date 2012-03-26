@@ -3,10 +3,10 @@ package twu;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class BibliotecaBook {
+public class BookManager {
     private Map<Integer, Book> bookList = new TreeMap<Integer, Book>();
 
-    public BibliotecaBook(){
+    public BookManager(){
         loadBookCollection();
     }
 
